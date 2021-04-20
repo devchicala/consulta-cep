@@ -18,7 +18,7 @@ function App() {
     const { value } = ev.target;
     const cep = value?.replace(/[^0-9]/g, "");
 
-    if (cep?.length !== 8 || cep === "") {
+    if (cep?.length !== 8 || cep === '') {
       setLoading(false);
       return;
     }
@@ -40,20 +40,55 @@ function App() {
         type="text"
         onChange={(ev) => onblur(ev)}
       />
-      <div className="cep"></div>
       <div className="cep">
         {loading && datas?.cep !== "undefined" ? (
           <>
             <b className="result">Results</b> <br />
-            <b>CEP: </b> {''+datas?.cep} <br />
-            <b>BAIRRO: </b> {''+datas?.bairro} <br />
-            <b>COMPLEMENTO: </b> {''+datas?.complemento} <br />
-            <b>DDD: </b> {''+datas?.ddd} <br />
-            <b>GIA: </b> {''+datas?.gia} <br />
-            <b>IBGE: </b> {''+datas?.ibge} <br />
-            <b>LOCALIDADE: </b> {''+datas?.localidade} <br />
-            <b>SIAFI: </b> {''+datas?.siafi} <br />
-            <b>UF: </b> {''+datas?.uf} <br />
+            <b>CEP: </b> {
+              typeof datas?.cep === 'undefined'
+                ? 'NOT FOUND!'
+                : datas?.cep
+            } <br />
+            <b>BAIRRO: </b> {
+              typeof datas?.cep === 'undefined'
+                ? 'NOT FOUND!'
+                : datas?.bairro
+            } <br />
+            <b>COMPLEMENTO: </b> {
+              typeof datas?.cep === 'undefined'
+                ? 'NOT FOUND!'
+                : datas?.complemento
+            } <br />
+            <b>DDD: </b> {
+              typeof datas?.cep === 'undefined'
+                ? 'NOT FOUND!'
+                : datas?.ddd
+            }<br />
+            <b>GIA: </b> {
+              typeof datas?.cep === 'undefined'
+                ? 'NOT FOUND!'
+                : datas?.gia
+            } <br />
+            <b>IBGE: </b> {
+              typeof datas?.cep === 'undefined'
+                ? 'NOT FOUND!'
+                : datas?.ibge
+            } <br />
+            <b>LOCALIDADE: </b> {
+              typeof datas?.cep === 'undefined'
+                ? 'NOT FOUND!'
+                : datas?.localidade
+            } <br />
+            <b>SIAFI: </b> {
+              typeof datas?.cep === 'undefined'
+                ? 'NOT FOUND!'
+                : datas?.siafi
+            } <br />
+            <b>UF: </b> {
+              typeof datas?.cep === 'undefined'
+                ? 'NOT FOUND!'
+                : datas?.uf
+            } <br />
           </>
         ) : (
           <ReactBootStrap.Spinner animation="border" />
