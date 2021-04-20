@@ -1,4 +1,4 @@
-interface cep {
+interface Cep {
     bairro: string,
     cep: string,
     complemento: string,
@@ -11,4 +11,4 @@ interface cep {
     uf: string,
 }
 
-export default cep;
+export default Cep;
